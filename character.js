@@ -3,7 +3,7 @@
 var firstName = 'Jon';
 var lastName = 'Cornfield';
 var age = 24;
-var bag = ['excalibur', 'potion', 'armor', 'map'];
+var bag = ['armor', 'map'];
 
 // build hero based on information gathered
 var hero = {
@@ -13,6 +13,24 @@ var hero = {
   bag: bag,
   equipped: null
 };
+
+// go to store to purchase items?
+hero = store(hero, 'cure poison potion')
+
+// store interface mock
+function store(person, itemToBuy) {
+  let itemsForSale = [
+    'cure poison potion'
+  ];
+
+  if (itemsForSale.includes(itemToBuy)) {
+    person.bag.push(itemToBuy);
+    return person;
+  } else {
+    throw Error(`Sorry out of ${itemToBuy}`)
+  }
+}
+
 // conditionals can be the 'training area'
 // if(hero.equiped == 'excalibur'){
 // console.log('I will defeat the dragon');
