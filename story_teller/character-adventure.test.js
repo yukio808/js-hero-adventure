@@ -38,8 +38,15 @@ Test('Something in the woods...', t => {
   if (hero.health <= EnemyBat.power) {
     t.fail(`${hero.name} took too much damage from FangBat's ${EnemyBat.weapon}`)
   } else {
-    t.pass('You survived an EnemyBat encounter in the woods.')
+    t.comment('You survived an EnemyBat encounter in the woods.')
   }
 
+  if (hero.bag.includes('potion')) {
+    t.comment('Your hero uses a potion to heal')
+    hero.bag.splice(hero.bag.indexOf('potion'), 1)
+  } else {
+    t.fail(`${heo.name} cannot heal and returns to town`)
+  }
+  t.pass('you complete the first adventure')
   t.end()
 })
