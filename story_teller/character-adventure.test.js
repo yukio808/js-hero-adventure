@@ -25,6 +25,7 @@ Test.serial('Hero is prepared for adventure', t => {
   })
 })
 
+// example encounter
 Test.serial('Something in the woods: FangBat!', t => {
   t.plan(3)
 
