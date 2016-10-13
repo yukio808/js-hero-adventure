@@ -19,6 +19,8 @@ var hero = {
 hero = store(hero, 'cure poison potion')
 
 // store interface mock
+// students could build this or
+// this could be provided via injection (node) or <script> (browser)
 function store(person, itemToBuy) {
   let itemsForSale = [
     'cure poison potion'
