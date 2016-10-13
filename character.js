@@ -7,8 +7,8 @@ var bag = ['excalibur', 'potion', 'armor', 'map'];
 
 // build hero based on information gathered
 var hero = {
-  name: firstName + lastName,
-  health: 10,
+  name: firstName + ' ' + lastName,
+  health: 11,
   age: age,
   bag: bag,
   equipped: null
