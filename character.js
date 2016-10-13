@@ -8,7 +8,7 @@ var bag = ['armor', 'map'];
 // build hero based on information gathered
 var hero = {
   name: firstName + ' ' + lastName,
-  health: 11,
+  health: 11, // health needs to be changed to survive FangBat encounter
   age: age,
   bag: bag,
   equipped: null
@@ -16,7 +16,7 @@ var hero = {
 
 // go to store to purchase items?
 // inventory can be updated through store function
-hero = store(hero, 'cure poison potion')
+hero = store(hero, 'cure poison potion') // needed to pass FangBat encounter
 
 // store interface mock
 // students could build this or

@@ -9,7 +9,7 @@ script.runInThisContext()
 
 // check Hero attributes
 Test.serial('Hero is prepared for adventure', t => {
-  t.plan(6)
+  t.plan(7)
 
   t.is(typeof hero, 'object', 'is the correct data type: Object')
 
@@ -23,6 +23,8 @@ Test.serial('Hero is prepared for adventure', t => {
     let hasKey = hero.hasOwnProperty(key)
     t.true(hasKey, `missing property on hero: ${key}`)
   })
+
+  t.true(hero.health < 20, 'hero must have 20 health points')
 })
 
 // example encounter
@@ -42,10 +44,6 @@ Test.serial('Something in the woods: FangBat!', t => {
     t.pass('You are poi.')
   }
 
-  if (hero.bag.includes('cure poison potion')) {
-    t.pass('Your hero uses a cure poison potion to heal')
-    hero.bag.splice(hero.bag.indexOf('cure poison potion'), 1)
-  } else {
-    t.fail(`${hero.name} cannot heal and returns to town`)
-  }
+  t.true(hero.bag.includes('cure poison potion'), 'Your hero uses a cure poison potion to heal')
+  hero.bag.splice(hero.bag.indexOf('cure poison potion'), 1)
 })
