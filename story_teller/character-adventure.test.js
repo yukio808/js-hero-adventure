@@ -1,4 +1,3 @@
-
 const Test = require('ava')
 const VM = require('vm')
 const FS = require('fs')
@@ -7,9 +6,36 @@ const CharacterFile = FS.readFileSync('../character.js')
 const script = new VM.Script(CharacterFile)
 script.runInThisContext()
 
-// check Hero attributes
+Test.serial('Provide your first name', t => {
+  t.plan(3)
+  t.not(firstName, undefined, 'Must have a varible called firstName')
+  t.is(typeof firstName, 'string', 'firstName must be a string')
+  t.pass('That is a good, strong name.')
+});
+
+Test.serial('Provide your last name', t => {
+  t.plan(3)
+  t.not(lastName, undefined, 'Must have a varible called firstName')
+  t.is(typeof lastName, 'string', 'lastName must be a string')
+  t.pass('That is a good, strong name.')
+});
+
+Test.serial('Provide your age', t => {
+  t.plan(3)
+  t.not(age, undefined, 'Must have a varible called firstName')
+  t.is(typeof age, 'number', 'age must be a number')
+  t.pass('You are never too young to start an adventure.')
+});
+
+Test.serial('Cant start an adventure without a bag!!', t => {
+  t.plan(2)
+  t.not(bag, undefined, 'Must have a varible called bag')
+  t.is(Array.isArray(bag), true, 'bag must be an array')
+});
+
+// check Here attributes
 Test.serial('Hero is prepared for adventure', t => {
-  t.plan(7)
+  t.plan(8)
 
   t.is(typeof hero, 'object', 'is the correct data type: Object')
 
@@ -18,7 +44,8 @@ Test.serial('Hero is prepared for adventure', t => {
     'health',
     'age',
     'bag',
-    'equipped'
+    'weaponEquip',
+    'armorEquip'
   ].forEach(key => {
     let hasKey = hero.hasOwnProperty(key)
     t.true(hasKey, `missing property on hero: ${key}`)
@@ -29,7 +56,7 @@ Test.serial('Hero is prepared for adventure', t => {
 
 // example encounter
 Test.serial('Something in the woods: FangBat!', t => {
-  t.plan(3)
+  t.plan(1)
 
   const EnemyBat = {
     type: 'bat',
@@ -37,13 +64,36 @@ Test.serial('Something in the woods: FangBat!', t => {
     weapon: 'hyper-fangs'
   }
 
-  if (hero.health <= EnemyBat.power) {
+  if(hero.armorEquip == 'armor'){
+    EnemyBat.power -= 5;
+  }
+
+  if (hero.health <= EnemyBat.power ) {
     t.fail(`${hero.name} took too much damage from FangBat's ${EnemyBat.weapon}`)
   } else {
     t.pass('You survived an EnemyBat encounter in the woods.')
-    t.pass('You are poi.')
   }
+});
 
-  t.true(hero.bag.includes('cure poison potion'), 'Your hero uses a cure poison potion to heal')
-  hero.bag.splice(hero.bag.indexOf('cure poison potion'), 1)
+Test.serial("Chose a class hero", t => {
+  t.plan(2);
+  t.not(heroClass, undefined, "You must have at least set the hero class to 'No Class'");
+  if (heroClass == 'swordsman') {
+    t.is(hero.weaponEquip, 'Excaliber', 'You are a swordsman therefore you must have Excaliber')
+  } else if (heroClass == 'archer') {
+    t.is(hero.weaponEquip, 'Ichaival', 'You are an archer thererfore you must have Ichaival')
+  } else if (heroClass == 'thief') {
+    t.is(hero.weaponEquip, 'Fragarach', 'You are a thief therefore you must have Fragarach')
+  } else if (heroClass == 'alchemist') {
+    t.is(hero.weaponEquip, 'Philosipher Stone', 'You are an alchemist therefore you must have the Philosipher Stone')
+  } else if (heroClass == 'sourcerous') {
+    t.is(hero.weaponEquip, 'Staff of Origin', 'You are a sourcerous therefore you must have the Staff of Origin')
+  } else if(heroClass == 'No Class') {
+    t.is(hero.weaponEquip, 'Some Magical Rock', 'You chose no class therefore you have a magic rock')
+  } else {
+    t.fail('You must have at least set the heroClass to \'No Class\'')
+  }
+})
+Test.after('The Dragon decends from above.', t => {
+  console.log('You have earned the right to challenge the dragon from the heavens. Now with your power defeat the dragon.');
 })
