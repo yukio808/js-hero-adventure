@@ -1,6 +1,5 @@
 # JS Hero
-Welcome hero. To the world of programming, magic, and stuff.
-You have been invited to a world that has been ravaged for centuries by the gods that have tried and tried again to thwart that which is JS in to the dark ages. You oh great hero must now challenge the gods and save the world. Use your JS skills to end their centuries of terror and save the JS people.
+Welcome hero. To the world of programming, magic, and stuff. You have been invited to a world that has been ravaged for centuries by the gods that have tried and tried again to thwart that which is JS into the dark ages. You oh great hero must now challenge the gods and save the world. Use your JS skills to end their centuries of terror and save the JS people.
 
 ### firstName
 create a variable called `firstName` with your first name as a value.   
@@ -43,9 +42,10 @@ You will need to have these **`Properties`**:
 
 ------
 ## Logic
-Hero you have now taken your first step into the challenges that await you. Set off into the world where puzzles and monsters alike that the gods have thrown in your path and finish the quest.
+Hero, you have now taken your first step into the challenges that await you. Set off into the world where puzzles and monsters alike that the gods have thrown in your path and finish the quest.
 
 Logic will be needed here to combat the obstacles that will test the `conditions` of your status and history.
+
 
 ### The Fanged Bat
 Oh no the winged bat has attacked you. If your health is too low you need to equip the armor in your bag. Otherwise the Winged Bat will end your adventure and JS will be forever lost.
@@ -53,7 +53,7 @@ Oh no the winged bat has attacked you. If your health is too low you need to equ
 `Hint: You have the 'armor' in your bag. Put the armor in your armorEquip`;
 
 ### Oooh Drops!!!!
-If you have defeated the winged bat you notice he has dropped some items. A total of 6 items total these items can only be used by a specific class of hero. You must only take one and move on with your adventure.
+If you have defeated the winged bat you notice he has dropped some items. A total of 6 items, these items can only be used by a specific class of hero. You must only take one and move on with your adventure.
 
 Do not assume your class. We will be watching. And don't just change your class so you can pick up a certain item either.
 
@@ -68,6 +68,6 @@ Do not assume your class. We will be watching. And don't just change your class 
 
 ---
 ## The Dragon Has Descended
-He has been watching you. He's watched you grow, struggle, and persevere. Now he see's you as a threat to his plans. You must be destroyed. Depending on your actions to date, only luck will be what determines how this tale will end. Defeat the dragon deity who commands time itself. Oh hero. FIGHT!!!!!!!
+He has been watching you. He's watched you grow, struggle, and persevere. Now he see's you as a threat to his plans. You must be destroyed. Depending on your actions to date, only luck will be what determines how this tale will end. Defeat the dragon deity who commands time itself. Oh, hero. FIGHT!!!!!!!
 
 ![Dragon](http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-74.gif)
